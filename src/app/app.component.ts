@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Serie } from './series/Serie';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Taller-Angular';
+  selectedSerie: Serie | null = null;
+
+  onSelectedSerie(serie: Serie) {
+    this.selectedSerie = serie;
+  }
 }

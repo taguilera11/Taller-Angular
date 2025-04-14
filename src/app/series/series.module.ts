@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SerieListComponent } from './serie-list/serie-list.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { SerieListComponent } from './serie-list/serie-list.component';
+import { SerieDetailComponent } from './serie-detail/serie-detail.component';
 
 
 @NgModule({
   declarations: [
-    SerieListComponent
+    SerieListComponent,
+    SerieDetailComponent
   ],
   imports: [
     CommonModule
@@ -15,7 +17,8 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
     provideHttpClient(withInterceptorsFromDi())
   ],
   exports: [
-    SerieListComponent
+    SerieListComponent,
+    SerieDetailComponent
   ]
 })
 export class SeriesModule { }

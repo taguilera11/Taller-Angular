@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SerieService } from '../serie.service';
-import { Serie } from '../serie';
+import { Serie } from '../Serie';
+import { SerieDetailComponent } from '../serie-detail/serie-detail.component';
 
 @Component({
   selector: 'app-serie-list',
@@ -12,6 +13,7 @@ export class SerieListComponent implements OnInit{
 
   series: Serie[] = [];
   averageSeasons: number = 0;
+  @Output() selectedSerie = new EventEmitter<Serie>();
 
   constructor(private serieService: SerieService) {}
 
@@ -28,6 +30,10 @@ export class SerieListComponent implements OnInit{
       average += serie.seasons;
     });
     return average/this.series.length
+  }
+  
+  selectSerie(serie: Serie): void{
+    this.selectedSerie.emit(serie);
   }
 
 }

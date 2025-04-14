@@ -9,7 +9,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let serie of series">
+        <tr *ngFor="let serie of series" (click)="selectSerie(serie)" style="cursor: pointer;">
           <td>{{ serie.id }}</td>
           <td>{{ serie.name }}</td>
           <td>{{ serie.channel }}</td>
