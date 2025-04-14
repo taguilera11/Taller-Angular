@@ -1,0 +1,13 @@
+<div *ngIf="serie" class="card mt-4" style="width: 100%;">
+    <img [src]="serie.poster" class="card-img-top w-100" style="height: 200px; object-fit: cover;" [alt]="serie.name">
+    <div class="card-body">
+      <h5 class="card-title">{{ serie.name }}</h5>
+      <p class="card-text">{{ serie.description }}</p>
+      <a [href]="serie.webpage" target="_blank" class="btn btn-primary">Watch</a>
+    </div>
+  </div>
+  
+  <div *ngIf="!serie">
+    <p class="text-muted mt-4"><em>Selecciona una serie para ver los detalles.</em></p>
+  </div>
+  
